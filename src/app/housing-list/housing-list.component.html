@@ -1,0 +1,10 @@
+<label for="location-search">Search for a new place</label>
+<input id="location-search" #searchloc placeholder="Ex: Chicago" />
+<button (click)="searchHousingLocaitons(searchloc.value)">Search</button>
+
+<article *ngFor="let location of results">
+    <img [src]="location.photo" [alt]="location.name">
+    <p>{{location.name}}</p>
+    <p>{{location.city}}, {{location.state}}</p>
+    <button (click)="selectHousingLocation(location)">View</button>
+</article>
